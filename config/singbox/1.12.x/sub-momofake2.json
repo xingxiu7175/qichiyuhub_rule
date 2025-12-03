@@ -45,6 +45,14 @@
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
+      {"domain": ["api.cloudflare.com", "raw.githubusercontent.com"], "outbound": "🎯 全球直连"},
+      {
+        "domain_suffix": [
+          "51datacube.com", 
+          "qzgjgs.com"
+        ], 
+        "outbound": "🎯 全球直连"
+      },
       {"rule_set": "geosite-netdisk-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-steamcn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
