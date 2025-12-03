@@ -58,6 +58,16 @@
         ], 
         "outbound": "🎯 全球直连"
       },
+      {
+        "domain_suffix": [
+          "xn--ngstr-lra8j.com",
+          "services.googleapis.cn",
+          "play.googleapis.com",
+          "android.googleapis.com",
+          "android.clients.google.com"
+        ], 
+        "outbound": "🚀 默认代理"
+      },
       {"rule_set": "geosite-netdisk-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-steamcn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
