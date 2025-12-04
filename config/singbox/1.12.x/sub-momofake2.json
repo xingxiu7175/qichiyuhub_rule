@@ -59,6 +59,13 @@
         "outbound": "🎯 全球直连"
       },
       {
+        "domain": [
+          "api.cloudflare.com",
+          "raw.githubusercontent.com"
+        ], 
+        "outbound": "🚀 默认代理"
+      },
+      {
         "domain_suffix": [
           "xn--ngstr-lra8j.com",
           "services.googleapis.cn",
