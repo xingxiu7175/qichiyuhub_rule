@@ -17,26 +17,26 @@ proxy-groups:
   - {name: 🇺🇲 美国节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
   - {name: 🇹🇼 台湾节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(德国|波兰|法国|荷兰|芬兰|西班牙|澳大利亚))^((?!(港|日|韩|美|新)).)*$"}
   - {name: 🇪🇺 欧洲节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台湾|台(?i)Taiwan))^((?!(港|日|韩|美|新)).)*$"}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, direct]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 直连]}
   - {name: ♻️ 自动选择, type: url-test, proxies: [🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], tolerance: 20, interval: 300}
   - {name: 🌐 全部节点, type: select, include-all: true}
-
+  - {name: 直连, type: direct}
 # 规则匹配
 rules:
-  - RULE-SET,private_ip,direct,no-resolve
-  - RULE-SET,private_domain,direct
+  - RULE-SET,private_ip,直连,no-resolve
+  - RULE-SET,private_domain,直连
   - DOMAIN-SUFFIX,qichiyu.com,🚀 节点选择
 #  - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,netflix_ip,🎥 NETFLIX  
-  - RULE-SET,apple_domain,direct
-  - RULE-SET,apple_ip,direct,no-resolve
+  - RULE-SET,apple_domain,直连
+  - RULE-SET,apple_ip,直连,no-resolve
     
 #  - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,geolocation-!cn,🚀 节点选择
-  - RULE-SET,cn_domain,direct
-  - RULE-SET,cn_ip,direct,no-resolve
+  - RULE-SET,cn_domain,直连
+  - RULE-SET,cn_ip,直连,no-resolve
   - MATCH,🐟 漏网之鱼
 
 # 规则集
