@@ -4,15 +4,15 @@
 # 跑裸核用户请自行去掉下方控制面板模块的注释。
 # 机场订阅
 #proxy-providers:
-  Airport1:
-    url: "http://192.168.10.252:3001/A8zXp8uhvtYEkWFd3HQa/download/collection/DPDNS?target=ClashMeta"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
+#  Airport1:
+#    url: "http://192.168.10.252:3001/A8zXp8uhvtYEkWFd3HQa/download/collection/DPDNS?target=ClashMeta"
+#    type: http
+#    interval: 86400
+#    health-check:
+#      enable: true
+#      url: https://www.gstatic.com/generate_204
+@      interval: 300
+@    proxy: 直连
 
 # 节点信息
 proxies:
@@ -100,7 +100,7 @@ proxy-groups:
   - {name: 📶 官方优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(官方|官))^((?!(港|台|日|韩|新)).)*$"}
   - {name: 📶 CM优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(电信|移动|联通))^((?!(港|台|日|韩|新)).)*$"}
   - {name: 📶 SNIP优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(SNIP))^((?!(港|台|日|韩|新)).)*$"}  
-- {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, 直连]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, 直连]}
 #  - {name: 🍀 Google, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
 #  - {name: 🤖 ChatGPT, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
 #  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
