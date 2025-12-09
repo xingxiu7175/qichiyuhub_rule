@@ -56,6 +56,7 @@
       {
         "process_name": [
           "cloudflared",
+          "CloudflareST",
           "/app/subs-check"
         ], 
         "outbound": "🎯 全球直连"
