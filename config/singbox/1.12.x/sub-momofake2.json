@@ -49,6 +49,7 @@
       {
         "process_path": [
           "/usr/local/bin/cloudflared",
+          "/root/lee/CloudflareST",
           "/app/subs-check"
         ], 
         "outbound": "🎯 全球直连"
