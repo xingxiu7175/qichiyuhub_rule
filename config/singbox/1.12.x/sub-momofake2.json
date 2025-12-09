@@ -48,7 +48,8 @@
       {"clash_mode": "global", "outbound": "GLOBAL"},
       {
         "process_path": [
-          "/usr/local/bin/cloudflared"
+          "/usr/local/bin/cloudflared",
+          "/app/subs-check"
         ], 
         "outbound": "🎯 全球直连"
       },
