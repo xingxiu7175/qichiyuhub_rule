@@ -54,6 +54,13 @@
         "outbound": "🎯 全球直连"
       },
       {
+        "process_name": [
+          "cloudflared",
+          "/app/subs-check"
+        ], 
+        "outbound": "🎯 全球直连"
+      },
+      {
         "domain_suffix": [
           "cloudns.net",
           "v2.argotunnel.com"
