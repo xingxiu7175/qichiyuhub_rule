@@ -3,6 +3,22 @@
 # 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
 #+proxies:
 #  - {name: 直连, type: direct}
++proxies:
+  # SOCKS5 示例
+  - name: "ECH-wk"
+    type: socks5
+    server: 127.0.0.1  # SOCKS5 服务器地址
+    port: 30000              # 端口号
+#    username: user123        # 用户名（可选）
+#    password: pass123        # 密码（可选）
+#    skip-cert-verify: true   # 跳过证书验证（可选）
+#    udp: true                # 启用 UDP（可选）
+
++proxy-groups:
+  - name: "ECHWK"
+    type: select
+    proxies:
+      - "ECH-wk"
 
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 📶 官方优选, 📶 CM优选, 📶 SNIP优选, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇹🇼 台湾节点, 🇪🇺 欧洲节点, 🌐 全部节点]}
