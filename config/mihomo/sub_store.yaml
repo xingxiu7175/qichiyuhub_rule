@@ -5,8 +5,8 @@
 #  - {name: 直连, type: direct}
 +proxies:
   # SOCKS5 示例
-  - name: "ECH-wk"
-    type: socks5
+  - type: socks5
+    name: "ECH-wk"
     server: 127.0.0.1  # SOCKS5 服务器地址
     port: 30000              # 端口号
 #    username: user123        # 用户名（可选）
