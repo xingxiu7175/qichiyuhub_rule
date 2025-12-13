@@ -66,9 +66,7 @@
       {
         "domain_suffix": [
           "cloudns.net",
-          "v2.argotunnel.com",
-          "store.ubi.com",
-          "saas.sin.fan"
+          "v2.argotunnel.com"
         ], 
         "outbound": "🎯 全球直连"
       },
