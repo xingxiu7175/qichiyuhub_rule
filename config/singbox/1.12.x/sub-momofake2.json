@@ -59,6 +59,7 @@
         "process_name": [
           "cloudflared",
           "CloudflareST",
+          "ech-workers",
           "/app/subs-check"
         ], 
         "outbound": "🎯 全球直连"
@@ -66,9 +67,7 @@
       {
         "domain_suffix": [
           "cloudns.net",
-          "v2.argotunnel.com",
-          "saas.sin.fan",
-          "store.ubi.com"
+          "v2.argotunnel.com"
         ], 
         "outbound": "🎯 全球直连"
       },
