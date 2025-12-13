@@ -42,9 +42,7 @@ proxy-groups:
 rules:
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
   - RULE-SET,private_domain,🎯 全球直连
-  - DOMAIN,saas.sin.fan,🎯 全球直连
-  - DOMAIN,store.ubi.com,🎯 全球直连
-  - DOMAIN-SUFFIX,qzgjgs.com,🎯 全球直连
+  - PROCESS-NAME,ech-workers,🎯 全球直连
   - DOMAIN-SUFFIX,51datacube.com,🎯 全球直连
   - DOMAIN-SUFFIX,qichiyu.com,🚀 节点选择
   - RULE-SET,proxylite,🚀 节点选择
