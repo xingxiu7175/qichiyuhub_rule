@@ -44,7 +44,7 @@ rules:
   - RULE-SET,private_domain,🎯 全球直连
   - PROCESS-NAME,ech-workers,🎯 全球直连
   - DOMAIN-SUFFIX,51datacube.com,🎯 全球直连
-  - DOMAIN-SUFFIX,store.ubi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,saas.sin.fan,🎯 全球直连
   - DOMAIN-SUFFIX,store.ubi.com,🎯 全球直连
   - DOMAIN-SUFFIX,qichiyu.com,🚀 节点选择
   - RULE-SET,proxylite,🚀 节点选择
