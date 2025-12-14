@@ -119,10 +119,19 @@ proxy-groups:
 rules:
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
   - RULE-SET,private_domain,🎯 全球直连
+  - PROCESS-NAME,CloudflareST,🎯 全球直连
+  - PROCESS-NAME,cloudflared,🎯 全球直连
   - PROCESS-NAME,ech-workers,🎯 全球直连
+  - DOMAIN,ip6.fei613.cloudns.be,🎯 全球直连
+  - DOMAIN,ip6.fei613.dpdns.org,🎯 全球直连
+  - DOMAIN,saas.sin.fan,🎯 全球直连
+  - DOMAIN,store.ubi.com,🎯 全球直连
   - DOMAIN-SUFFIX,51datacube.com,🎯 全球直连
-  - DOMAIN-SUFFIX,store.ubi.com,🎯 全球直连
-  - DOMAIN-SUFFIX,store.ubi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,cloudns.net,🎯 全球直连
+  - IP-CIDR, 198.41.192.0/24,🎯 全球直连,no-resolve
+  - IP-CIDR,198.41.200.0/24,🎯 全球直连,no-resolve
+  - SRC-IP-CIDR,172.16.0.0/16,🎯 全球直连,no-resolve
+  - DOMAIN,api.cloudflare.com,🚀 节点选择
   - DOMAIN-SUFFIX,qichiyu.com,🚀 节点选择
   - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,youtube_domain,📹 YouTube
@@ -130,7 +139,7 @@ rules:
   - RULE-SET,netflix_ip,🎥 NETFLIX  
   - RULE-SET,apple_domain,🎯 全球直连
   - RULE-SET,apple_ip,🎯 全球直连,no-resolve
-    
+
 #  - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
