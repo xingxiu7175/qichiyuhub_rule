@@ -1,0 +1,84 @@
+# 出站策略，根据自己情况调整每个策略里分组排序，增删都可以，比如把美国自动放到第一个，比如删除香港故转，注意别漏掉表情逗号等。
+# 如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
+# 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
+#+proxies:
+#  - {name: 直连, type: direct}
++proxies:
+  # SOCKS5 示例
+  - type: socks5
+    name: ECH-wk
+    server: 127.0.0.1  # SOCKS5 服务器地址
+    port: 30000              # 端口号
+#    username: user123        # 用户名（可选）
+#    password: pass123        # 密码（可选）
+#    skip-cert-verify: true   # 跳过证书验证（可选）
+#    udp: true                # 启用 UDP（可选）
+  
+  - type: socks5
+    name: ECH-wk2
+    server: 127.0.0.1 
+    port: 30001
+    
+proxy-groups:
+  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🐟 ECHWK, 📶 官方优选, 📶 CM优选, 📶 SNIP优选, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇹🇼 台湾节点, 🇪🇺 欧洲节点, 🌐 全部节点]}
+  - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点]}
+  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点]}
+  - {name: 🐟 ECHWK, type: load-balance, tolerance: 20, interval: 300, proxies: [ECH-wk,ECH-wk2]}
+  - {name: 📶 官方优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(官方|官))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: 📶 CM优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(电信|移动|联通))^((?!(us)).)*$"}
+#  - {name: 📶 SNIP优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^(?=.*\bSNIP\b).*$"}  
+  - {name: 📶 SNIP优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(SNIP|SNIPss))^((?!(美|US)).)*$"}  
+  - {name: 🇭🇰 香港节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+  - {name: 🇯🇵 日本节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|日本|韩国|韩|JP|KR(?i)Japan|Kora))^((?!(港|台|新|美)).)*$"}
+  - {name: 🇸🇬 狮城节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$"}
+  - {name: 🇺🇲 美国节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: 🇪🇺 欧洲节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(德国|波兰|法国|荷兰|芬兰|西班牙|澳大利亚))^((?!(港|日|韩|美|新)).)*$"}
+  - {name: 🇹🇼 台湾节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台湾|台(?i)Taiwan))^((?!(港|日|韩|美|新)).)*$"}
+  - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
+  - {name: ♻️ 自动选择, type: url-test, proxies: [🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], tolerance: 20, interval: 300}
+  - {name: 🌐 全部节点, type: select, include-all: true}
+# 规则匹配
+rules:
+  - RULE-SET,private_ip,🎯 全球直连,no-resolve
+  - RULE-SET,private_domain,🎯 全球直连
+  - PROCESS-NAME,ech-workers,🎯 全球直连
+  - DOMAIN-SUFFIX,51datacube.com,🎯 全球直连
+  - DOMAIN-SUFFIX,store.ubi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,store.ubi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,qichiyu.com,🚀 节点选择
+  - RULE-SET,proxylite,🚀 节点选择
+  - RULE-SET,youtube_domain,📹 YouTube
+  - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,netflix_ip,🎥 NETFLIX  
+  - RULE-SET,apple_domain,🎯 全球直连
+  - RULE-SET,apple_ip,🎯 全球直连,no-resolve
+    
+#  - RULE-SET,ai,🤖 ChatGPT
+  - RULE-SET,geolocation-!cn,🚀 节点选择
+  - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
+  - MATCH,🐟 漏网之鱼
+
+# 规则集
+## type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers: 
+#  fakeipfilter_domain: {<<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/wwqgtxx/clash-rules/release/fakeip-filter.mrs"}
+  private_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+  proxylite: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list"}
+#  ai: {  <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs" }
+  youtube_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
+  netflix_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  apple_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
+  geolocation-!cn: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+  cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+  private_ip: {<<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
+  cn_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
+  google_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
+  netflix_ip: { <<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
+  apple_ip: {<<: *ip, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs"}
+  
