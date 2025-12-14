@@ -1,6 +1,16 @@
 # 直连补充列表
 
 # 域名后缀匹配
-DOMAIN-SUFFIX,baidu.com
+  PROCESS-NAME,CloudflareST
+  PROCESS-NAME,cloudflared
+  PROCESS-NAME,ech-workers
+  
+  DOMAIN,saas.sin.fan
+  DOMAIN,store.ubi.com
+  DOMAIN-SUFFIX,51datacube.com
+  DOMAIN-SUFFIX,cloudns.net
+  IP-CIDR,198.41.192.0/24,no-resolve
+  IP-CIDR,198.41.200.0/24,no-resolve
+  SRC-IP-CIDR,172.16.0.0/16,no-resolve
 
 
