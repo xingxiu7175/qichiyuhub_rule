@@ -9,6 +9,7 @@ PROCESS-NAME,ech-workers
 DOMAIN,saas.sin.fan
 DOMAIN,store.ubi.com
 
+DOMAIN,gh-proxy.com
 DOMAIN-SUFFIX,51datacube.com
 DOMAIN-SUFFIX,cloudns.net
 
