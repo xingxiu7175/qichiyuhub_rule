@@ -14,7 +14,7 @@ DOMAIN-SUFFIX,51datacube.com
 DOMAIN-SUFFIX,cloudns.net
 
 ##解决绕过大陆后谷歌商店无法更新
-DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+# DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 # DOMAIN-SUFFIX,clients.google.com
 # DOMAIN-SUFFIX,services.googleapis.cn
 
