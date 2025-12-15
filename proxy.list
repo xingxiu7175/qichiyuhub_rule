@@ -22,13 +22,15 @@ DOMAIN-SUFFIX,dns.quad9.net
 DOMAIN-SUFFIX,hk-hkg.doh.sb
 
 ##解决绕过大陆后谷歌商店无法更新
-DOMAIN-SUFFIX,clients.google.com
 DOMAIN-SUFFIX,services.googleapis.cn
+DOMAIN-SUFFIX,clientservices.googleapis.com
 
-DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-DOMAIN-SUFFIX,googleapis.cn
-DOMAIN-SUFFIX,play.googleapis.com
-DOMAIN-SUFFIX,android.googleapis.com
+
+#DOMAIN-SUFFIX,clients.google.com
+#DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+#DOMAIN-SUFFIX,googleapis.cn
+#DOMAIN-SUFFIX,play.googleapis.com
+#DOMAIN-SUFFIX,android.googleapis.com
 
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
