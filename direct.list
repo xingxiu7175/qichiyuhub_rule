@@ -14,12 +14,13 @@ DOMAIN-SUFFIX,51datacube.com
 DOMAIN-SUFFIX,cloudns.net
 
 ##解决绕过大陆后谷歌商店无法更新
-DOMAIN-SUFFIX,services.googleapis.cn
-DOMAIN-SUFFIX,googleapis.cn
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-DOMAIN-SUFFIX,android.clients.google.com
-DOMAIN-SUFFIX,play.googleapis.com
-DOMAIN-SUFFIX,android.googleapis.com
+# DOMAIN-SUFFIX,clients.google.com
+# DOMAIN-SUFFIX,services.googleapis.cn
+
+## DOMAIN-SUFFIX,googleapis.cn
+## DOMAIN-SUFFIX,play.googleapis.com
+## DOMAIN-SUFFIX,android.googleapis.com
 
 IP-CIDR,198.41.192.0/24,no-resolve
 IP-CIDR,198.41.200.0/24,no-resolve
