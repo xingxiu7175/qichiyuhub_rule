@@ -25,10 +25,10 @@ DOMAIN-SUFFIX,hk-hkg.doh.sb
 DOMAIN-SUFFIX,clients.google.com
 DOMAIN-SUFFIX,services.googleapis.cn
 
-# DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-## DOMAIN-SUFFIX,googleapis.cn
-## DOMAIN-SUFFIX,play.googleapis.com
-## DOMAIN-SUFFIX,android.googleapis.com
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+DOMAIN-SUFFIX,googleapis.cn
+DOMAIN-SUFFIX,play.googleapis.com
+DOMAIN-SUFFIX,android.googleapis.com
 
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
