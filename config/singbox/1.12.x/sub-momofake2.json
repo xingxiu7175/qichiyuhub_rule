@@ -23,7 +23,7 @@
   "outbounds": [
     {"tag": "ECH-wk", "type": "socks", "server": "127.0.0.1", "server_port": 30000, "version": "5"},
     {"tag": "ECH-wk2", "type": "socks", "server": "127.0.0.1", "server_port": 30001, "version": "5"},
-    {"tag": "🚀 默认代理", "type": "selector", "outbounds": ["📶 官方优选", "📶 CM优选", "🍃 极速机场", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动", "🇪🇺 欧洲节点", "🐟 ECHWK", "♻️ 自动选择", "🐸 手动选择"]},
+    {"tag": "🚀 默认代理", "type": "selector", "outbounds": ["📶 官方优选", "📶 CM优选", "🍃 极速机场",  "♻️ 自动选择", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动", "🇪🇺 欧洲节点", "🐟 ECHWK", "🐸 手动选择"]},
     {"tag": "📹 YouTube", "type": "selector", "outbounds": ["🚀 默认代理", "📶 官方优选", "📶 CM优选", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动", "🍃 极速机场", "🐸 手动选择"]},
     {"tag": "🎥 Netflix", "type": "selector", "outbounds": ["🚀 默认代理", "📶 官方优选", "📶 CM优选", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动", "🍃 极速机场", "🐸 手动选择"]},
     {"tag": "📶 官方优选", "type": "urltest", "outbounds": []},
