@@ -69,7 +69,11 @@
       {
         "domain_suffix": [
           "cloudns.net",
-          "v2.argotunnel.com"
+          "v2.argotunnel.com",
+          "de5.net",
+          "dpdns.org",
+          "cloudns.be",
+          "jsjc.cfd"
         ], 
         "outbound": "🎯 全球直连"
       },
