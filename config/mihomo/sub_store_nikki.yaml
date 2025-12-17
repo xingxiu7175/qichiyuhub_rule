@@ -128,7 +128,8 @@ rules:
   - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,netflix_domain,🎥 NETFLIX
-  - RULE-SET,netflix_ip,🎥 NETFLIX  
+  - RULE-SET,netflix_ip,🎥 NETFLIX
+  - RULE-SET,telegram_domain,📹 YouTube
   - RULE-SET,apple_domain,🎯 全球直连
   - RULE-SET,apple_ip,🎯 全球直连,no-resolve
 #  - RULE-SET,ai,🤖 ChatGPT
@@ -149,9 +150,10 @@ rule-providers:
   private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   directlite: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/direct.list"}
   proxylite: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/proxy.list"}
-#  ai: {  <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs" }
+#  ai: {  <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs" }
   youtube_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   netflix_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  telegram_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
   apple_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
