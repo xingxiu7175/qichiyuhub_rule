@@ -105,7 +105,7 @@ proxy-groups:
   - {name: 🐟 ECHWK, type: select, proxies: [ECH-wk,ECH-wk2]}
   - {name: 📶 官方优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(官方|官))^((?!(港|台|日|韩|新)).)*$"}
   - {name: 📶 CM优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(电信|移动|联通))^((?!(us)).)*$"}
-  - {name: 🍃 极速机场, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^(?=.*(极速).*$"}  
+  - {name: 🍃 极速机场, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^(?=.*(极速).)*$"}  
   - {name: 🆕 SS节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(SNIP|SNIPss))^((?!(美|US)).)*$"}  
   - {name: 🇭🇰 香港节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美SNIP|SNIPss)).)*$"}
   - {name: 🇯🇵 日韩节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|日本|韩国|韩|JP|KR(?i)Japan|Kora))^((?!(港|台|新|美SNIP|SNIPss)).)*$"}
