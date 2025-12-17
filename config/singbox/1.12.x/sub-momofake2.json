@@ -69,6 +69,7 @@
         "domain_suffix": [
           "cloudns.net",
           "v2.argotunnel.com",
+          "cloudflare-ech.com",
           "de5.net",
           "dpdns.org",
           "cloudns.be",
@@ -106,9 +107,7 @@
       {
         "ip_cidr": [
           "198.41.192.0/24", 
-          "198.41.200.0/24",
-          "172.64.154.204",
-          "104.18.40.152"
+          "198.41.200.0/24"
         ], 
         "outbound": "🎯 全球直连"
       },
