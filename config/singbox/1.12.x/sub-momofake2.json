@@ -61,8 +61,7 @@
           "cloudflared",
           "CloudflareST",
           "ech-workers",
-          "/app/subs-check",
-          "/app/ech-workers"
+          "/app/subs-check"
         ], 
         "outbound": "🎯 全球直连"
       },
