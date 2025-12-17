@@ -129,7 +129,7 @@ rules:
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,netflix_ip,🎥 NETFLIX
-  - RULE-SET,telegram_domain,📹 YouTube
+#  - RULE-SET,telegram_domain,📹 YouTube
   - RULE-SET,apple_domain,🎯 全球直连
   - RULE-SET,apple_ip,🎯 全球直连,no-resolve
 #  - RULE-SET,ai,🤖 ChatGPT
