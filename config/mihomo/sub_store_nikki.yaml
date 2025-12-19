@@ -18,10 +18,10 @@
 #    skip-cert-verify: true   # 跳过证书验证（可选）
 #    udp: true                # 启用 UDP（可选）
   
-  - type: socks5
-    name: ECH-wk2
-    server: 127.0.0.1 
-    port: 30001
+#  - type: socks5
+#    name: ECH-wk2
+#    server: 127.0.0.1 
+#    port: 30001
 
 # 全局配置 
 mixed-port: 7890
