@@ -60,8 +60,7 @@
         "process_name": [
           "cloudflared",
           "CloudflareST",
-          "ech-workers",
-          "/app/subs-check"
+          "ech-workers"
         ], 
         "outbound": "🎯 全球直连"
       },
