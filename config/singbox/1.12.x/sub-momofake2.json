@@ -37,7 +37,7 @@
     {"tag": "🐸 手动选择", "type": "selector", "outbounds": []},
     {"tag": "🎯 全球直连", "type": "direct"},
     {"tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 默认代理", "🎯 全球直连"]},
-    {"tag": "🐟 ECHWK", "type": "selector", "outbounds": ["ECH-wk", "ECH-wk2"]},
+    {"tag": "🐟 ECHWK", "type": "selector", "outbounds": ["ECH-wk"]},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 默认代理", "🎯 全球直连"]}
   ],
   "route": {
