@@ -117,7 +117,7 @@ proxy-groups:
   - {name: 🇹🇼 台湾节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台湾|台(?i)Taiwan))^((?!(港|日|韩|美|新|极速)).)*$"}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
-  - {name: 🐟 ECHWK, type: select, proxies: [ECH-wk,ECH-wk2]}
+  - {name: 🐟 ECHWK, type: select, proxies: [ECH-wk]}
   - {name: ♻️ 自动选择, type: url-test, proxies: [🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], tolerance: 20, interval: 300}
   - {name: 🌐 全部节点, type: select, include-all: true}
 # 规则匹配
