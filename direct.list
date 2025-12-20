@@ -5,6 +5,13 @@ PROCESS-NAME,CloudflareST
 PROCESS-NAME,cloudflared
 PROCESS-NAME,ech-workers
 
+# Cloudflare 隧道
+IP-CIDR,198.41.192.0/24,no-resolve
+IP-CIDR,198.41.200.0/24,no-resolve
+
+#docker 网络 sub-check测速
+SRC-IP-CIDR,172.16.0.0/16,no-resolve
+
 #docker ECH-WK 优选域名  
 DOMAIN,saas.sin.fan
 DOMAIN,store.ubi.com
@@ -19,10 +26,3 @@ DOMAIN-SUFFIX,de5.net
 DOMAIN-SUFFIX,gh-proxy.com
 
 # DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-
-# Cloudflare 隧道
-IP-CIDR,198.41.192.0/24,no-resolve
-IP-CIDR,198.41.200.0/24,no-resolve
-
-#docker 网络 sub-check测速
-SRC-IP-CIDR,172.16.0.0/16,no-resolve
