@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "process_path": [
+        "/usr/local/bin/cloudflared",
+        "/root/lee/CloudflareST",
+        "/app/subs-check"
+      ],
+      "process_name": [
+        "cloudflared",
+        "CloudflareST",
+        "ech-workers"
+      ], 
+      "domain_suffix": [
+        "cloudns.net",
+        "v2.argotunnel.com",
+        "cloudflare-ech.com",
+        "gh-proxy.com",
+        "jsjc.cfd",
+        "cloudns.be",
+        "dpdns.org"
+      ]
+    }
+  ]
+}
