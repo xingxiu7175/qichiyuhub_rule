@@ -64,7 +64,7 @@
       {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"}
     ],
     "rule_set": [
-      {"type": "inline","tag": "inline-direct-domain",
+      {"tag": "inline-direct-domain", "type": "inline",
         "rules": [
           {
             "process_path": [
@@ -89,7 +89,7 @@
           }
         ]
       },
-      {"type": "inline","tag": "inline-direct-ip",
+      {"tag": "inline-direct-ip", "type": "inline",
         "rules": [
           {
             "ip_cidr": [
@@ -102,7 +102,7 @@
           }
         ]
       },
-      {"type": "inline","tag": "inline-proxy-domain",
+      {"tag": "inline-proxy-domain", "type": "inline",
         "rules": [
           {
             "domain": [
