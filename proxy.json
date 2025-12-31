@@ -11,7 +11,8 @@
         "services.googleapis.cn",
         "play.googleapis.com",
         "android.googleapis.com",
-        "android.clients.google.com"
+        "android.clients.google.com",
+        "pages.dev"
       ]
     }
   ]
