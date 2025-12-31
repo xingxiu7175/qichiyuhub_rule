@@ -4,15 +4,15 @@
     {
       "domain": [
         "api.cloudflare.com",
-        "raw.githubusercontent.com"
+        "raw.githubusercontent.com",
+        "nikkinikki.pages.dev"
       ],
       "domain_suffix": [
         "xn--ngstr-lra8j.com",
         "services.googleapis.cn",
         "play.googleapis.com",
         "android.googleapis.com",
-        "android.clients.google.com",
-        "pages.dev"
+        "android.clients.google.com"
       ]
     }
   ]
