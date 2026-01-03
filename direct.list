@@ -2,6 +2,7 @@
 
 # 域名后缀匹配
 PROCESS-NAME,CloudflareST
+PROCESS-NAME,CloudflareST_proxy_linux_arm64
 PROCESS-NAME,cloudflared
 PROCESS-NAME,ech-workers
 
