@@ -9,6 +9,8 @@ PROCESS-NAME,ech-workers
 #docker ECH-WK 优选域名  
 DOMAIN,saas.sin.fan
 DOMAIN,store.ubi.com
+DOMAIN,nikkinikki.pages.dev
+DOMAIN,momomomo.pages.dev
 
 DOMAIN-SUFFIX,gh-proxy.com
 DOMAIN-SUFFIX,gh-proxy.org
