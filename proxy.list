@@ -3,9 +3,10 @@
 # 域名后缀匹配
 DOMAIN,api.cloudflare.com
 DOMAIN,raw.githubusercontent.com
-DOMAIN,nikkinikki.pages.dev
-DOMAIN,momomomo.pages.dev
 DOMAIN-SUFFIX,qichiyu.com
+# DOMAIN,nikkinikki.pages.dev
+# DOMAIN,momomomo.pages.dev
+
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,1e100
