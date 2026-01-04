@@ -4,9 +4,7 @@
     {
       "domain": [
         "api.cloudflare.com",
-        "raw.githubusercontent.com",
-        "nikkinikki.pages.dev",
-        "momomomo.pages.dev"
+        "raw.githubusercontent.com"
       ],
       "domain_suffix": [
         "xn--ngstr-lra8j.com",
