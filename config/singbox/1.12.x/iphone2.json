@@ -9,6 +9,7 @@
     "rules": [
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
+      {"query_type": "HTTPS", "action": "reject"},
       {"rule_set": "geosite-fakeipfilter", "server": "local"},
       {"rule_set": "geosite-cn", "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
@@ -107,16 +108,13 @@
   },
   "inbounds": [
     {
-      "tag": "tun-in",
       "type": "tun",
       "address": [
         "172.19.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
       "mtu": 9000,
-      "auto_route": true,
-      "route.override_android_vpn": true,
-      "strict_route": false
+      "auto_route": true
     }
   ],
   "experimental": {
