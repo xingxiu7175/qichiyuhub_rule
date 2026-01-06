@@ -82,6 +82,8 @@
       // 5. 国内外分离
       {"rule_set": "geosite-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-!cn", "outbound": "🚀 默认代理"},
+      // 7. 特殊处理
+      {"action": "resolve"},
       // 6. IP 规则
       {"rule_set": "geoip-apple", "outbound": "🚀 默认代理"},
       {"rule_set": "geoip-netflix", "outbound": "🎥 Netflix"},
