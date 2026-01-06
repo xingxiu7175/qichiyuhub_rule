@@ -1,0 +1,158 @@
+{
+  "dns": {
+    "servers": [
+      {"tag": "local", "type": "udp", "server": "223.5.5.5"},
+      {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
+      {"tag": "foreign", "type": "https", "server": "8.8.8.8", "detour": "🚀 默认代理"},
+      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
+    ],
+    "rules": [
+      {"clash_mode": "direct", "server": "local"},
+      {"clash_mode": "global", "server": "fakeip"},
+      {"query_type": "HTTPS", "action": "reject"},
+      {"rule_set": "geosite-fakeipfilter", "server": "local"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1},
+      {"rule_set": "geosite-cn", "server": "local"}
+    ],
+    "final": "foreign",
+    "client_subnet": "223.5.5.0/24",
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "reverse_mapping": true
+  },
+    "outbounds": [
+    {"tag": "🚀 默认代理", "type": "selector", "outbounds": ["📶 官方优选", "📶 CM优选", "🍃 极速机场", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动", "🇪🇺 欧洲节点", "♻️ 自动选择", "🐸 手动选择"]},
+    {"tag": "📹 YouTube", "type": "selector", "outbounds": ["🚀 默认代理", "📶 官方优选", "📶 CM优选", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动", "🍃 极速机场", "🐸 手动选择"]},
+    {"tag": "🎥 Netflix", "type": "selector", "outbounds": ["🚀 默认代理", "📶 官方优选", "📶 CM优选", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动", "🍃 极速机场", "🐸 手动选择"]},
+    {"tag": "📶 官方优选", "type": "urltest", "outbounds": []},
+    {"tag": "📶 CM优选", "type": "urltest", "outbounds": []},
+    {"tag": "🍃 极速机场", "type": "urltest", "outbounds": []},
+    {"tag": "🇭🇰 香港自动", "type": "urltest", "outbounds": []},
+    {"tag": "🇯🇵 日本自动", "type": "urltest", "outbounds": []},
+    {"tag": "🇸🇬 狮城自动", "type": "urltest", "outbounds": []},
+    {"tag": "🇺🇲 美国自动", "type": "urltest", "outbounds": []},
+    {"tag": "🇪🇺 欧洲节点", "type": "urltest", "outbounds": []},
+    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动"]},
+    {"tag": "🐸 手动选择", "type": "selector", "outbounds": []},
+    {"tag": "🎯 全球直连", "type": "direct"},
+    {"tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 默认代理", "🎯 全球直连"]},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 默认代理", "🎯 全球直连"]}
+  ],
+  "route": {
+    "rules": [
+      {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
+      {"inbound": "dns-in", "action": "hijack-dns"},
+      {"ip_is_private": true, "outbound": "🎯 全球直连"},
+      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
+      {"clash_mode": "global", "outbound": "GLOBAL"},
+      {
+        "process_path": [
+          "/usr/local/bin/cloudflared",
+          "/root/lee/CloudflareST",
+          "/app/subs-check"
+        ], 
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "process_name": [
+          "cloudflared",
+          "CloudflareST",
+          "ech-workers",
+          "/app/subs-check",
+          "/app/ech-workers"
+        ], 
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "domain_suffix": [
+          "cloudns.net",
+          "v2.argotunnel.com"
+        ], 
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "domain": [
+          "api.cloudflare.com",
+          "raw.githubusercontent.com"
+        ], 
+        "outbound": "🚀 默认代理"
+      },
+      {
+        "domain_suffix": [
+          "xn--ngstr-lra8j.com",
+          "services.googleapis.cn",
+          "play.googleapis.com",
+          "android.googleapis.com",
+          "android.clients.google.com"
+        ], 
+        "outbound": "🚀 默认代理"
+      },
+      {"rule_set": "geosite-netdisk-cn", "outbound": "🎯 全球直连"},
+      {"rule_set": "geosite-steamcn", "outbound": "🎯 全球直连"},
+      {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
+      {"rule_set": "geosite-apple@cn", "outbound": "🎯 全球直连"},
+      {"rule_set": "geosite-youtube", "outbound": "📹 YouTube"},
+      {"rule_set": "geosite-netflix", "outbound": "🎥 Netflix"},
+      {"rule_set": "geosite-!cn", "outbound": "🚀 默认代理"},
+      {"rule_set": "geosite-cn", "outbound": "🎯 全球直连"},
+      {"action": "resolve"},
+      {
+        "ip_cidr": [
+          "198.41.192.0/24", 
+          "198.41.200.0/24"
+        ], 
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "source_ip_cidr": [
+          "172.16.0.0/24"
+        ], 
+        "outbound": "🎯 全球直连"
+      },
+      {"rule_set": "geoip-apple", "outbound": "🚀 默认代理"},
+      {"rule_set": "geoip-netflix", "outbound": "🎥 Netflix"},
+      {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"}
+    ],
+    "rule_set": [
+      {"tag": "geosite-fakeipfilter", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/fakeipfilter.json", "download_detour": "🎯 全球直连"},
+      {"tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geosite-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geosite-microsoft@cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft@cn.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geosite-apple@cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple@cn.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geosite-netdisk-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-netdisk-cn.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geosite-steamcn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam@cn.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geosite-!cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "🎯 全球直连"}
+    ],
+    "final": "🐠 漏网之鱼",
+    "default_domain_resolver": {"server": "public"}
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "mtu": 9000,
+      "auto_route": true
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9095",
+      "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "🎯 全球直连",
+      "secret": "",
+      "default_mode": "rule"
+    }
+  },
+  "log": {
+    "disabled": false,
+    "level": "warn",
+    "timestamp": true
+  }
+}
