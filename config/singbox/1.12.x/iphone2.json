@@ -58,7 +58,10 @@
       {
         "domain_suffix": [
           "cloudns.net",
-          "v2.argotunnel.com"
+          "gh-proxy.com",
+          "gh-proxy.org",
+          "cloudns.be",
+          "dpdns.org"
         ], 
         "outbound": "🎯 全球直连"
       },
