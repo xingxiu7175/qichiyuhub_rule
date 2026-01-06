@@ -46,24 +46,6 @@
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
       {
-        "process_path": [
-          "/usr/local/bin/cloudflared",
-          "/root/lee/CloudflareST",
-          "/app/subs-check"
-        ], 
-        "outbound": "🎯 全球直连"
-      },
-      {
-        "process_name": [
-          "cloudflared",
-          "CloudflareST",
-          "ech-workers",
-          "/app/subs-check",
-          "/app/ech-workers"
-        ], 
-        "outbound": "🎯 全球直连"
-      },
-      {
         "domain_suffix": [
           "cloudns.net",
           "v2.argotunnel.com"
@@ -96,19 +78,6 @@
       {"rule_set": "geosite-!cn", "outbound": "🚀 默认代理"},
       {"rule_set": "geosite-cn", "outbound": "🎯 全球直连"},
       {"action": "resolve"},
-      {
-        "ip_cidr": [
-          "198.41.192.0/24", 
-          "198.41.200.0/24"
-        ], 
-        "outbound": "🎯 全球直连"
-      },
-      {
-        "source_ip_cidr": [
-          "172.16.0.0/24"
-        ], 
-        "outbound": "🎯 全球直连"
-      },
       {"rule_set": "geoip-apple", "outbound": "🚀 默认代理"},
       {"rule_set": "geoip-netflix", "outbound": "🎥 Netflix"},
       {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"}
