@@ -121,7 +121,7 @@
   },
   "log": {
     "disabled": false,
-    "level": "warn",
+    "level": "info",
     "timestamp": true
   }
 }
