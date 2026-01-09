@@ -62,7 +62,10 @@
           "gh-proxy.com",
           "gh-proxy.org",
           "cloudns.be",
-          "dpdns.org"
+          "digitalplat.org",
+          "dash.cloudflare.com",
+          "dpdns.org",
+          "onewsvod.com"
         ], 
         "outbound": "🎯 全球直连"
       },
