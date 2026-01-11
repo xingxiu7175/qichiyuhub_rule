@@ -44,17 +44,17 @@ rules:
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
   - RULE-SET,private_domain,🎯 全球直连
   - RULE-SET,directlite,🎯 全球直连
+  - RULE-SET,apple_domain,🎯 全球直连
+  - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,apple_ip,🎯 全球直连,no-resolve
+  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
   - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,netflix_ip,🎥 NETFLIX
 #  - RULE-SET,telegram_domain,📹 YouTube
-  - RULE-SET,apple_domain,🎯 全球直连
-  - RULE-SET,apple_ip,🎯 全球直连,no-resolve
 #  - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,geolocation-!cn,🚀 节点选择
-  - RULE-SET,cn_domain,🎯 全球直连
-  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
 
 # 规则集
