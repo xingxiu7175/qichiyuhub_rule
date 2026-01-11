@@ -77,9 +77,9 @@ dns:
 # 出站策略 smart参数 （ uselightgbm: false, collectdata: false, strategy: sticky-sessions,policy-priority: "Premium:0.9;SG:1.3" ）
 # 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 香港智能, ♻️ 日本智能, ♻️ 狮城智能, ♻️ 自动选择, 🌐 全部节点, 🎯 全球直连]}
-  - {name: 📹 YouTube, type: select, proxies: [🚀 默认代理, ♻️ 香港智能, ♻️ 日本智能, ♻️ 狮城智能, ♻️ 自动选择, 🌐 全部节点, 🎯 全球直连]}
-  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 默认代理, ♻️ 香港智能, ♻️ 日本智能, ♻️ 狮城智能, ♻️ 自动选择, 🌐 全部节点, 🎯 全球直连]}
+  - {name: 🚀 默认代理, type: select, proxies: [♻️ 香港智能, ♻️ 日本智能, ♻️ 狮城智能, ♻️ 美国智能, ♻️ 自动选择, 🌐 全部节点, 🎯 全球直连]}
+  - {name: 📹 YouTube, type: select, proxies: [🚀 默认代理, ♻️ 香港智能, ♻️ 日本智能, ♻️ 狮城智能, ♻️ 美国智能, ♻️ 自动选择, 🌐 全部节点]}
+  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 默认代理, ♻️ 香港智能, ♻️ 日本智能, ♻️ 狮城智能, ♻️ 美国智能, ♻️ 自动选择, 🌐 全部节点]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, 🎯 全球直连]}
   - {name: ♻️ 香港智能, type: smart, uselightgbm: false, collectdata: false, strategy: sticky-sessions,policy-priority: "Premium:0.9;SG:1.3", interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: ♻️ 日本智能, type: smart, uselightgbm: false, collectdata: false, strategy: sticky-sessions,policy-priority: "Premium:0.9;SG:1.3", interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
@@ -94,7 +94,7 @@ rules:
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
   - RULE-SET,private_domain,🎯 全球直连
   - RULE-SET,directlite,🎯 全球直连
-  - RULE-SET,proxylite,🚀 节点选择
+  - RULE-SET,proxylite,🚀 默认代理
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,netflix_ip,🎥 NETFLIX
