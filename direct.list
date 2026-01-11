@@ -9,7 +9,7 @@ PROCESS-NAME,ech-workers
 #docker ECH-WK 优选域名  
 DOMAIN,saas.sin.fan
 DOMAIN,store.ubi.com
-# DOMAIN,dash.cloudflare.com
+DOMAIN,dash.cloudflare.com
 DOMAIN,nikkinikki.pages.dev
 DOMAIN,momomomo.pages.dev
 
@@ -21,7 +21,7 @@ DOMAIN-SUFFIX,cloudns.net
 DOMAIN-SUFFIX,jsjc.cfd
 DOMAIN-SUFFIX,cloudns.be
 DOMAIN-SUFFIX,dpdns.org
-# DOMAIN-SUFFIX,digitalplat.org
+DOMAIN-SUFFIX,digitalplat.org
 
 # DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 
