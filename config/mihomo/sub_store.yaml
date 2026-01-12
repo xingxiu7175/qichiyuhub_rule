@@ -35,6 +35,7 @@ proxy-groups:
   - {name: 🇪🇺 欧盟节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(德国|英国|波兰|法国|荷兰|芬兰|西班牙|澳大利亚))^((?!(港|日|韩|美|新|极速)).)*$"}
   - {name: 🇹🇼 台湾节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台湾|台(?i)Taiwan))^((?!(港|日|韩|美|新|极速)).)*$"}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
+  - {name: 🛑 广告拦截, type: select, proxies: [REJECT]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
   - {name: 🐟 ECHWK, type: select, proxies: [ECH-wk]}
   - {name: ♻️ 自动选择, type: url-test, proxies: [🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], tolerance: 20, interval: 300}
@@ -42,6 +43,7 @@ proxy-groups:
   - {name: 🌐 全部节点, type: select, include-all: true}
 # 规则匹配
 rules:
+  - RULE-SET,category-ads-all,🛑 广告拦截
   - RULE-SET,private_ip,🎯 全球直连,no-resolve
   - RULE-SET,private_domain,🎯 全球直连
   - RULE-SET,directlite,🎯 全球直连
@@ -66,6 +68,7 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
 #  fakeipfilter_domain: {<<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/wwqgtxx/clash-rules/release/fakeip-filter.mrs"}
+  category-ads-all: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
   private_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   directlite: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/direct.list"}
   proxylite: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/proxy.list"}
