@@ -22,6 +22,7 @@
     
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, ♻️ Smart智选, 🍃 极速机场, 📶 官方优选, 📶 CM优选, 🆕 SNIP节点, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇹🇼 台湾节点, 🇪🇺 欧盟节点, 🐟 ECHWK, 🌐 全部节点]}
+  - {name: ♻️ Smart智选, type: url-test, proxies: [📶 官方优选, 📶 CM优选, 🆕 SNIP节点, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇪🇺 欧盟节点], tolerance: 20, interval: 300}
   - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择, ♻️ Smart智选, 🍃 极速机场, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择, 🍃 极速机场, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 📶 官方优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(官方|移动|电信|联通))^((?!(港|台|日|韩|新)).)*$"}
@@ -39,8 +40,8 @@ proxy-groups:
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
   - {name: 🐟 ECHWK, type: select, proxies: [ECH-wk]}
   - {name: ♻️ 自动选择, type: url-test, proxies: [🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], tolerance: 20, interval: 300}
-  - {name: ♻️ Smart智选, type: url-test, proxies: [📶 官方优选, 📶 CM优选, 🆕 SNIP节点, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇪🇺 欧盟节点], tolerance: 20, interval: 300}
   - {name: 🌐 全部节点, type: select, include-all: true}
+  
 # 规则匹配
 rules:
   - RULE-SET,category-ads-all,🛑 广告拦截
