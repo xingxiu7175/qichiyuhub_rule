@@ -36,7 +36,6 @@
     {"tag": "🇪🇺 欧洲节点", "type": "urltest", "outbounds": []},
     {"tag": "🐸 手动选择", "type": "selector", "outbounds": []},
     {"tag": "🎯 全球直连", "type": "direct"},
-    {"tag": "🛑 广告拦截", "type": "selector","action": "reject"},
     {"tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 默认代理", "🎯 全球直连"]},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 默认代理", "🎯 全球直连"]}
   ],
@@ -50,7 +49,7 @@
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
       // 3. 特定域名规则（按优先级）
-      {"rule_set": "category-ads-all", "outbound": "🛑 广告拦截"},
+      {"rule_set": "category-ads-all", "action": "reject"},
       {"rule_set": "geosite-netdisk-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-steamcn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-microsoft@cn", "outbound": "🎯 全球直连"},
