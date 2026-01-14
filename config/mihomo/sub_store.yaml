@@ -30,22 +30,20 @@ dns:
     
 #+proxies:
 #  - {name: 直连, type: direct}
-+proxies:
-  # SOCKS5 示例
-  - type: socks5
-    name: ECH-wk
-    server: 127.0.0.1  # SOCKS5 服务器地址
-    port: 30000              # 端口号
+proxies:
+  - {name: ECH-wk, type: socks5, server: 127.0.0.1, port: 30000}
+  - {name: ECH-wk, type: socks5, server: 127.0.0.1, port: 30000}
+
+# SOCKS5 示例
+#  - type: socks5
+#    name: ECH-wk
+#    server: 127.0.0.1  # SOCKS5 服务器地址
+#    port: 30000              # 端口号
 #    username: user123        # 用户名（可选）
 #    password: pass123        # 密码（可选）
 #    skip-cert-verify: true   # 跳过证书验证（可选）
 #    udp: true                # 启用 UDP（可选）
-  
-#  - type: socks5
-#    name: ECH-wk2
-#    server: 127.0.0.1 
-#    port: 30001
-    
+
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, ♻️ Smart智选, 🍃 极速机场, 📶 官方优选, 📶 CM优选, 🆕 SNIP节点, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇹🇼 台湾节点, 🇪🇺 欧盟节点, 🐟 ECHWK, 🌐 全部节点]}
   - {name: ♻️ Smart智选, type: url-test, proxies: [📶 官方优选, 📶 CM优选, 🆕 SNIP节点, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇪🇺 欧盟节点], tolerance: 20, interval: 300}
