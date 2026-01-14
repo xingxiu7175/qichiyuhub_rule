@@ -10,8 +10,8 @@ PROCESS-NAME,ech-workers
 DOMAIN,saas.sin.fan
 DOMAIN,store.ubi.com
 DOMAIN,dash.cloudflare.com
-DOMAIN,nikkinikki.pages.dev
-DOMAIN,momomomo.pages.dev
+# DOMAIN,nikkinikki.pages.dev
+# DOMAIN,momomomo.pages.dev
 
 DOMAIN-SUFFIX,gh-proxy.com
 DOMAIN-SUFFIX,gh-proxy.org
@@ -19,11 +19,9 @@ DOMAIN-SUFFIX,51datacube.com
 DOMAIN-SUFFIX,onewsvod.com
 DOMAIN-SUFFIX,cloudns.net
 DOMAIN-SUFFIX,jsjc.cfd
-DOMAIN-SUFFIX,cloudns.be
-DOMAIN-SUFFIX,dpdns.org
 DOMAIN-SUFFIX,digitalplat.org
-
-# DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+# DOMAIN-SUFFIX,cloudns.be
+# DOMAIN-SUFFIX,dpdns.org
 
 # Cloudflare 隧道
 IP-CIDR,198.41.192.0/24,no-resolve
