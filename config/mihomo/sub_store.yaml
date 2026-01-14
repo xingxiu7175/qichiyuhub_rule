@@ -25,9 +25,9 @@ dns:
     - https://8.8.8.8/dns-query#RULES&ecs=223.5.5.0/24
 #  fake-ip-filter:
 #    - rule-set:fakeipfilter_domain
-  nameserver-policy:
-    'geosite:category-ads-all':
-    - 127.0.0.1:0  
+#  nameserver-policy:
+#    'geosite:category-ads-all':
+#    - 127.0.0.1:0  
     
 #+proxies:
 #  - {name: 直连, type: direct}
