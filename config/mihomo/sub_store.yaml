@@ -70,7 +70,10 @@ dns:
     geoip-code: CN
     geosite:
       - gfw
-      - !cn
+      - youtube
+      - disney
+      - netflix
+      
     ipcidr:
       - 240.0.0.0/4
     domain:
