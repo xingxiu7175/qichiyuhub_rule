@@ -44,17 +44,17 @@ dns:
   
   # 主 nameserver（按规则分流）
   nameserver:
-    - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
   fallback:
     - tls://8.8.4.4
     - tls://1.1.1.1
   
   # 代理域名使用的 DNS
   proxy-server-nameserver:
-    - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-
+    - https://doh.pub/dns-query
+    
   # 直连域名使用的 DNS
   #direct-nameserver:
   #  - https://dns.alidns.com/dns-query
