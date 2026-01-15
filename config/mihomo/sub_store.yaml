@@ -80,7 +80,8 @@ dns:
     - '*.msftncsi.com'
     - '*.msftconnecttest.com'
     - '*.apple.com'  # Apple 设备激活需要真实 IP
-  
+    - 'ip6.fei613.dpdns.org'  #DDNS
+    - 'ip6.fei613.cloudns.be' #DDNS
   # 缓存设置
   cache-size: 2048
   cache-ttl-min: 600
