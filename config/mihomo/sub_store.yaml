@@ -82,9 +82,9 @@ dns:
       - '+.youtube.com'
   
   # 缓存设置
-  cache-size: 2048
-  cache-ttl-min: 600
-  cache-ttl-max: 86400
+  # cache-size: 2048
+  # cache-ttl-min: 600
+  # cache-ttl-max: 86400
     
 #+proxies:
 #  - {name: 直连, type: direct}
