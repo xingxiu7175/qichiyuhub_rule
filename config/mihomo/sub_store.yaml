@@ -53,8 +53,8 @@ dns:
   
   # 代理域名使用的 DNS
   proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
     
   # 直连域名使用的 DNS
   direct-nameserver:
