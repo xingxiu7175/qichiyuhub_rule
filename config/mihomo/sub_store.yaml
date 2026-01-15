@@ -21,8 +21,6 @@ dns:
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-    - 8.8.8.8
-    - 1.1.1.1
   
   # 代理域名使用的 DNS
   proxy-server-nameserver:
@@ -36,7 +34,6 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
     - tls://223.5.5.5:853
-    - 119.29.29.29
   
   # 主 nameserver（按规则分流）
   nameserver:
@@ -50,13 +47,17 @@ dns:
   
   # DNS 策略（可选，更精确控制）
   nameserver-policy:
+    #广告屏蔽
+    "geosite:category-ads-all":
+      - 127.0.0.1:0 
+    
     # 特定域名使用指定 DNS
     "geosite:cn,private": 
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
     
     # GFW 列表中的域名使用国外 DNS
-    "geosite:gfw":
+    "geosite:!cn,gfw":
       - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
     
