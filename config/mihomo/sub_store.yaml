@@ -11,8 +11,8 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16  # 推荐使用 IANA 保留地址
   fake-ip-filter-mode: blacklist
-  fake-ip-ttl: 1
   use-hosts: true
+  # fake-ip-ttl: 1
 
   # Fake-IP 过滤列表
   fake-ip-filter:
@@ -31,10 +31,10 @@ dns:
   # DNS 策略（可选，更精确控制)
   nameserver-policy:
     # 广告屏蔽
-    'geosite:category-ads-all':
+    'geosite: category-ads-all':
       - 10.0.0.1
     # 特定域名使用指定 DNS
-    'geosite:cn,private': 
+    'geosite: [cn,private]': 
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
     
