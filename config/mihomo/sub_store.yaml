@@ -34,10 +34,10 @@ dns:
     'geosite: category-ads-all':
       - 10.0.0.1
     # 特定域名使用指定 DNS
-    'geosite: [cn,private]': 
+    'geosite: [CN, private]':
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
-    
+      
   # 默认 nameserver（用于解析 DoH 服务器域名）
   default-nameserver:
     - 223.5.5.5
