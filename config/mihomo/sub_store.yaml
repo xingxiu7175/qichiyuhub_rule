@@ -11,6 +11,7 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16  # 推荐使用 IANA 保留地址
   fake-ip-filter-mode: blacklist
+  fake-ip-ttl: 1
   use-hosts: true
 
   # Fake-IP 过滤列表
