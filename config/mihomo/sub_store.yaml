@@ -25,8 +25,8 @@ dns:
     - '*.msftncsi.com'
     - '*.msftconnecttest.com'
     - '*.apple.com'  # Apple 设备激活需要真实 IP
-    - '+.dpdns.org'  #DDNS
-    - '+.cloudns.be' #DDNS
+    - 'ip6.fei613.dpdns.org'  #DDNS
+    - 'ip6.fei613.cloudns.be' #DDNS
 
   # DNS 策略（可选，更精确控制)
   nameserver-policy:
