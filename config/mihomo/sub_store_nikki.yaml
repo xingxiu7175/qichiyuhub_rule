@@ -83,7 +83,7 @@ dns:
   ipv6: false
   respect-rules: true
   enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
+  fake-ip-range: 198.18.0.1/16  # 推荐使用 IANA 保留地址
   fake-ip-filter-mode: blacklist
   default-nameserver:
     - https://223.5.5.5/dns-query
@@ -96,13 +96,13 @@ dns:
   nameserver:
     - https://8.8.8.8/dns-query#RULES&ecs=223.5.5.0/24
   fake-ip-filter:
-    - rule-set:fakeipfilter_domain
+  #  - rule-set:fakeipfilter_domain
   # 放行 ddns 域名
-  #  - ip6.fei613.dpdns.org
-  #  - ip6.fei613.cloudns.be
+    - ip6.fei613.dpdns.org
+    - ip6.fei613.cloudns.be
   nameserver-policy:
     'geosite:category-ads-all':
-    - 127.0.0.1:0  
+    - 10.0.0.1  # DNS 屏蔽广告 指向空地址
     
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🍃 极速机场, 📶 官方优选, 📶 CM优选, 🆕 SNIP节点, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇹🇼 台湾节点, 🇪🇺 欧洲节点, 🐟 ECHWK, 🌐 全部节点]}
@@ -149,7 +149,7 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
 #  fakeipfilter_domain: {<<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/wwqgtxx/clash-rules/release/fakeip-filter.mrs"}
-  fakeipfilter_domain: {type: http, interval: 86400, behavior: domain, format: text, url: "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/fakeipfilter.list"}
+#  fakeipfilter_domain: {type: http, interval: 86400, behavior: domain, format: text, url: "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/fakeipfilter.list"}
   private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   directlite: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/direct.list"}
   proxylite: { <<: *class, url: "https://gh-proxy.com/https://raw.githubusercontent.com/xingxiu7175/qichiyuhub_rule/refs/heads/main/proxy.list"}
