@@ -3,7 +3,6 @@
 # 如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
 # 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
 
-# DNS模块
 dns:
   enable: true
   cache-algorithm: arc
@@ -11,23 +10,80 @@ dns:
   ipv6: false
   respect-rules: true
   enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
+  
+  # 建议修改 fake-ip 范围（避免冲突）
+  fake-ip-range: 198.18.0.1/16  # 推荐使用 IANA 保留地址
+  
   fake-ip-filter-mode: blacklist
+  use-hosts: true
+  
+  # 默认 nameserver（用于解析 DoH 服务器域名）
   default-nameserver:
-    - https://223.5.5.5/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
+    - 8.8.8.8
+    - 1.1.1.1
+  
+  # 代理域名使用的 DNS
   proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+  
+  # 直连域名使用的 DNS
   direct-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
+    - tls://223.5.5.5:853
+    - 119.29.29.29
+  
+  # 主 nameserver（按规则分流）
   nameserver:
-    - https://8.8.8.8/dns-query#RULES&ecs=223.5.5.0/24
-#  fake-ip-filter:
-#    - rule-set:fakeipfilter_domain
-#  nameserver-policy:
-#    'geosite:category-ads-all':
-#    - 127.0.0.1:0  
+    # 国内域名 - 使用国内 DNS
+    - 'https://dns.alidns.com/dns-query#dns-direct'
+    - 'https://doh.pub/dns-query#dns-direct'
+    
+    # 国外域名 - 使用国外 DNS
+    - 'https://dns.google/dns-query#dns-proxy&edns'
+    - 'https://cloudflare-dns.com/dns-query#dns-proxy&edns'
+  
+  # DNS 策略（可选，更精确控制）
+  nameserver-policy:
+    # 特定域名使用指定 DNS
+    "geosite:cn,private": 
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+    
+    # GFW 列表中的域名使用国外 DNS
+    "geosite:gfw":
+      - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
+    
+    # 流媒体服务优化
+    "geosite:netflix":
+      - https://dns.google/dns-query
+    "geosite:disney":
+      - https://dns.google/dns-query
+    "geosite:youtube":
+      - https://dns.google/dns-query
+  
+  # Fake-IP 过滤列表
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - '*.localhost'
+    - 'time.*.com'
+    - 'time.*.gov'
+    - 'time.*.edu.cn'
+    - '*.msftncsi.com'
+    - '*.msftconnecttest.com'
+    - '*.apple.com'  # Apple 设备激活需要真实 IP
+  
+  # 缓存设置
+  cache-size: 2048
+  cache-ttl-min: 600
+  cache-ttl-max: 86400
     
 #+proxies:
 #  - {name: 直连, type: direct}
