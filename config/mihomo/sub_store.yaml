@@ -10,65 +10,10 @@ dns:
   ipv6: false
   respect-rules: true
   enhanced-mode: fake-ip
-  
-  # 建议修改 fake-ip 范围（避免冲突）
   fake-ip-range: 198.18.0.1/16  # 推荐使用 IANA 保留地址
-  
   fake-ip-filter-mode: blacklist
   use-hosts: true
-  
-  # 默认 nameserver（用于解析 DoH 服务器域名）
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  
-  # 代理域名使用的 DNS
-  proxy-server-nameserver:
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-    - tls://8.8.8.8:853
-    - tls://1.1.1.1:853
-  
-  # 直连域名使用的 DNS
-  direct-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-    - tls://223.5.5.5:853
-  
-  # 主 nameserver（按规则分流）
-  nameserver:
-    # 国内域名 - 使用国内 DNS
-    - 'https://dns.alidns.com/dns-query#dns-direct'
-    - 'https://doh.pub/dns-query#dns-direct'
-    
-    # 国外域名 - 使用国外 DNS
-    - 'https://dns.google/dns-query#dns-proxy&edns'
-    - 'https://cloudflare-dns.com/dns-query#dns-proxy&edns'
-  
-  # DNS 策略（可选，更精确控制）
-  nameserver-policy:
-    #广告屏蔽
-    "geosite:category-ads-all":
-      - 127.0.0.1:0 
-    
-    # 特定域名使用指定 DNS
-    "geosite:cn,private": 
-      - https://dns.alidns.com/dns-query
-      - https://doh.pub/dns-query
-    
-    # GFW 列表中的域名使用国外 DNS
-    "geosite:!cn,gfw":
-      - https://dns.google/dns-query
-      - https://cloudflare-dns.com/dns-query
-    
-    # 流媒体服务优化
-    "geosite:netflix":
-      - https://dns.google/dns-query
-    "geosite:disney":
-      - https://dns.google/dns-query
-    "geosite:youtube":
-      - https://dns.google/dns-query
-  
+
   # Fake-IP 过滤列表
   fake-ip-filter:
     - '*.lan'
@@ -82,6 +27,57 @@ dns:
     - '*.apple.com'  # Apple 设备激活需要真实 IP
     - 'ip6.fei613.dpdns.org'  #DDNS
     - 'ip6.fei613.cloudns.be' #DDNS
+
+  # DNS 策略（可选，更精确控制)
+  nameserver-policy:
+    # 广告屏蔽
+    'geosite:category-ads-all':
+      - 10.0.0.1
+    # 特定域名使用指定 DNS
+    'geosite:cn,private': 
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+    
+  # 默认 nameserver（用于解析 DoH 服务器域名）
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  
+  # 主 nameserver（按规则分流）
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - tls://8.8.4.4
+    - tls://1.1.1.1
+  
+  # 代理域名使用的 DNS
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+  # 直连域名使用的 DNS
+  #direct-nameserver:
+  #  - https://dns.alidns.com/dns-query
+  #  - https://doh.pub/dns-query
+  #  - tls://223.5.5.5:853
+  direct-nameserver:
+    - system
+  direct-nameserver-follow-policy: false
+  
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - gfw
+      - !cn
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+  
   # 缓存设置
   cache-size: 2048
   cache-ttl-min: 600
