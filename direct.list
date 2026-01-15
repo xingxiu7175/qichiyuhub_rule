@@ -20,8 +20,8 @@ DOMAIN-SUFFIX,onewsvod.com
 DOMAIN-SUFFIX,cloudns.net
 DOMAIN-SUFFIX,jsjc.cfd
 DOMAIN-SUFFIX,digitalplat.org
-# DOMAIN-SUFFIX,cloudns.be
-# DOMAIN-SUFFIX,dpdns.org
+DOMAIN-SUFFIX,cloudns.be
+DOMAIN-SUFFIX,dpdns.org
 
 # Cloudflare 隧道
 IP-CIDR,198.41.192.0/24,no-resolve
