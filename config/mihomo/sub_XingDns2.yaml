@@ -5,17 +5,17 @@
 #  - {name: 直连, type: direct}
   
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🍃 极速机场, 📶 官方优选, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇹🇼 台湾节点, 🌐 全部节点]}
+  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🍃 极速机场, 📶 官方优选, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇹🇼 台湾节点, 🇪🇺 欧盟节点, 🌐 全部节点]}
   - {name: ♻️ 自动选择, type: url-test, proxies: [🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🇹🇼 台湾节点], tolerance: 20, interval: 300}
   - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择, 🍃 极速机场, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择, 🍃 极速机场, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点]}
-  - {name: 📶 官方优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(官方))^((?!(SNIP|SNIPss)).)*$"}
-  - {name: 🍃 极速机场, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(极速))^((?!(snio|snip)).)*$"} 
-  - {name: 🇭🇰 香港节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+  - {name: 📶 官方优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(官方|移动|联通|电信))^((?!(SNIP|SNIPss)).)*$"}
+  - {name: 🍃 极速机场, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(极速))^((?!(snip)).)*$"} 
+  - {name: 🇭🇰 香港节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|香港(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: 🇯🇵 日韩节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|日本|韩国|韩|JP|KR(?i)Japan|Kora))^((?!(港|台|新|美)).)*$"}
   - {name: 🇸🇬 狮城节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$"}
-  - {name: 🇺🇲 美国节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
-#  - {name: 🇪🇺 欧洲节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(德国|英国|波兰|法国|荷兰|芬兰|西班牙|澳大利亚))^((?!(港|日|韩|美|新)).)*$"}
+  - {name: 🇺🇲 美国节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|美国|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: 🇪🇺 欧盟节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(德国|英国|波兰|法国|荷兰|芬兰|西班牙|澳大利亚))^((?!(港|日|韩|美|新)).)*$"}
   - {name: 🇹🇼 台湾节点, type: load-balance, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台湾|台(?i)Taiwan))^((?!(港|日|韩|美|新)).)*$"}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
