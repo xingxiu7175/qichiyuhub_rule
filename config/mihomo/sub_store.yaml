@@ -106,7 +106,7 @@ proxy-groups:
   - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择, ♻️ Smart智选, 🍃 极速机场, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 🎥 NETFLIX, type: select, proxies: [🚀 节点选择, 🍃 极速机场, 🇭🇰 香港节点, 🇯🇵 日韩节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 📶 官方优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(官方|移动|电信|联通))^((?!(港|台|日|韩|新)).)*$"}
-  - {name: 📶 CM优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(CM优选))^((?!(移动|电信|联通)).)*$"}
+  - {name: 📶 CM优选, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(CMKV优选|CMwk优选))^((?!(移动|电信|联通)).)*$"}
   - {name: 🍃 极速机场, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(极速))^((?!(snio|snip)).)*$"} 
   - {name: 🆕 SNIP节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(SNIP|SNIPss|SNIP_by))^((?!(美|US)).)*$"}  
   - {name: 🇭🇰 香港节点, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|极速)).)*$"}
