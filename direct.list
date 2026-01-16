@@ -9,7 +9,7 @@ PROCESS-NAME,ech-workers
 #docker ECH-WK 优选域名  
 DOMAIN,saas.sin.fan
 DOMAIN,store.ubi.com
-DOMAIN,dash.cloudflare.com
+# DOMAIN,dash.cloudflare.com
 DOMAIN,gh-proxy.com
 DOMAIN,gh-proxy.org
 # DOMAIN,nikkinikki.pages.dev
