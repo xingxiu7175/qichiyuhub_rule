@@ -28,4 +28,4 @@ IP-CIDR,198.41.192.0/24,no-resolve
 IP-CIDR,198.41.200.0/24,no-resolve
 
 #docker 网络 sub-check测速
-# SRC-IP-CIDR,172.16.0.0/16,no-resolve
+SRC-IP-CIDR,172.16.0.0/16,no-resolve
