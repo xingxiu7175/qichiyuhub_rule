@@ -4,6 +4,7 @@
 DOMAIN,api.cloudflare.com
 DOMAIN,raw.githubusercontent.com
 DOMAIN-SUFFIX,qichiyu.com
+DOMAIN-SUFFIX,pages.dev
 # DOMAIN,nikkinikki.pages.dev
 # DOMAIN,momomomo.pages.dev
 
