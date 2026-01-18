@@ -3,16 +3,6 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
 # 跑裸核用户请自行去掉下方控制面板模块的注释。
 # 机场订阅
-proxy-providers:
-  Airport1:
-    url: "https://by27hk.pages.dev/ech/sub"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
 
 # 节点信息
 proxies:
