@@ -98,7 +98,7 @@ proxy-groups:
   - {name: 🇸🇬 狮城自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$"}
   - {name: 🇯🇵 日韩自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|韩))^((?!(港|台|新|美)).)*$"}
   - {name: 🇺🇲 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美国|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
-  - {name: 🇪🇺 欧盟自动,, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*)^((?!(港|台|日|韩|新|美国)).)*$"}
+  - {name: 🇪🇺 欧盟自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*)^((?!(港|台|日|韩|新|美国)).)*$"}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, 直连]}
   - {name: 🌐 全部节点, type: select, include-all: true}
