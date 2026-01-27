@@ -37,7 +37,7 @@ if (url) {
     name,
     type,
     platform: 'sing-box',
-    produceType: 'raw',
+    produceType: 'internal',
     produceOpts: {
       'include-unsupported-proxy': includeUnsupportedProxy,
     },
@@ -53,7 +53,7 @@ if (url) {
     name,
     type,
     platform: 'sing-box',
-    produceType: 'raw',
+    produceType: 'internal',
     produceOpts: {
       'include-unsupported-proxy': includeUnsupportedProxy,
     },
