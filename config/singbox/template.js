@@ -53,9 +53,9 @@ if (url) {
     name,
     type,
     platform: 'sing-box',
-    produceType: 'raw',
+    produceType: 'internal',
     produceOpts: {
-      'include-unsupported-proxy': true,
+      'include-unsupported-proxy': includeUnsupportedProxy,
     },
   })
 }
